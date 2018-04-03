@@ -74,9 +74,12 @@ public class DrawPanel extends JPanel {
         this.currentShape = null;
         this.currentColor = Color.BLACK;
 
+        dph = new DrawPanelHandler();
+        this.addMouseListener(dph);
+        this.addMouseMotionListener(dph);
+
         this.setBounds(10, 10, 300, 300);
         this.setBackground(Color.WHITE);
-        dph = new DrawPanelHandler();
     }
 
     public class DrawPanelHandler extends MouseAdapter implements MouseMotionListener {
