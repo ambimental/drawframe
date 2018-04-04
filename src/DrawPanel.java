@@ -68,7 +68,7 @@ public class DrawPanel extends JPanel {
         label.setText("Welcome!");
         this.statusLabel = label;
         this.shapes = new ArrayList<>();
-        this.shapes.ensureCapacity(100);
+        //this.shapes.ensureCapacity(100);
         this.shapeCount = 0;
         this.shapeType = new Line();
         this.currentShape = null;
@@ -98,8 +98,8 @@ public class DrawPanel extends JPanel {
             System.out.print("release");
             currentShape.setX2(e.getX());
             currentShape.setY2(e.getY());
-            shapes.add(shapeCount, currentShape);
-            shapeCount++;
+            shapes.add(currentShape);
+            //shapeCount++;
             currentShape = null;
             repaint();
         }
