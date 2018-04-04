@@ -58,8 +58,11 @@ public class DrawPanel extends JPanel {
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
-        for(Shape shape : this.shapes)
-            shape.draw(g);
+        for(Shape shape : this.shapes){
+            if(shape instanceof Line)
+                Line.draw(g);
+        }
+
         if(this.currentShape != null)
             this.currentShape.draw(g);
     }
@@ -80,6 +83,15 @@ public class DrawPanel extends JPanel {
 
         this.setBounds(10, 10, 300, 300);
         this.setBackground(Color.WHITE);
+
+        currentShape = shapeType;
+        currentShape.setX1(0);
+        currentShape.setY1(0);
+        currentShape.setX2(100);
+        currentShape.setY2(100);
+        shapes.add(currentShape);
+        currentShape = null;
+        repaint();
     }
 
     public class DrawPanelHandler extends MouseAdapter implements MouseMotionListener {
