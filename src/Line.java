@@ -20,8 +20,7 @@ public class Line extends Shape
    // draw line in specified color
    public void draw( Graphics g )
    {
-      
-	   
+      g.drawLine(this.getX1(), this.getY1(), this.getX2(), this.getY2());
    } // end method draw
 } // end class MyLine
 

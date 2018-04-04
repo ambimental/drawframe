@@ -86,6 +86,7 @@ public class DrawPanel extends JPanel {
         @Override
         public void mousePressed(MouseEvent e) {
             super.mousePressed(e);
+            System.out.print("press");
             currentShape = shapeType;
             currentShape.setX1(e.getX());
             currentShape.setY1(e.getY());
@@ -94,6 +95,7 @@ public class DrawPanel extends JPanel {
         @Override
         public void mouseReleased(MouseEvent e) {
             super.mouseReleased(e);
+            System.out.print("release");
             currentShape.setX2(e.getX());
             currentShape.setY2(e.getY());
             shapes.add(shapeCount, currentShape);

@@ -21,7 +21,7 @@ public class Oval extends BoundedShape
    // draw oval
    public void draw( Graphics g )
    {
-      
+      g.drawOval(this.getX1(), this.getY1(), (this.getX1() - this.getX2()), (this.getY1() - this.getY2()));
 	   
 	   
 	   
